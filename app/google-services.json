@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695976156015",
+    "project_id": "latihan-firabase",
+    "storage_bucket": "latihan-firabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695976156015:android:a949f31e105d3d1349669a",
+        "android_client_info": {
+          "package_name": "com.masdika.latihanfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDvkekN87eLXcpSbrz0E-KjGc67A_zKYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
