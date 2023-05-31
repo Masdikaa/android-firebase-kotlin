@@ -82,8 +82,7 @@ class LoginActivity : AppCompatActivity() {
                 intent.putExtra("email", account.email)
                 intent.putExtra("name", account.displayName)
                 intent.putExtra("account", account.account)
-                intent.putExtra("id", account.id)
-                intent.putExtra("id token", account.idToken)
+                intent.putExtra("image_profile", account.photoUrl.toString())
                 startActivity(intent)
             } else {
                 Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
