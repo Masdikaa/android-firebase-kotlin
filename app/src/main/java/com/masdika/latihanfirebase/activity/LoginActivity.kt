@@ -37,15 +37,10 @@ class LoginActivity : AppCompatActivity() {
             .requestIdToken(getString(R.string.default_web_client_id))
             .requestEmail()
             .build()
-
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-
         binding.btnGoogleLogin.setOnClickListener {
-
             signInGoogle()
-
-//            startActivity(Intent(this, MainActivity::class.java))
         }
 
     }
@@ -81,12 +76,24 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 intent.putExtra("email", account.email)
                 intent.putExtra("name", account.displayName)
-                intent.putExtra("account", account.account)
                 intent.putExtra("image_profile", account.photoUrl.toString())
                 startActivity(intent)
             } else {
                 Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // LoginFilter Firebase Google Login
+        val currenUser = auth.currentUser
+        if (currenUser != null) {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("email", currenUser.email)
+            intent.putExtra("name", currenUser.displayName)
+            intent.putExtra("image_profile", currenUser.photoUrl.toString())
+            startActivity(intent)
         }
     }
 }
