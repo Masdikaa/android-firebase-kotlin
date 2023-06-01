@@ -78,6 +78,7 @@ class LoginActivity : AppCompatActivity() {
                 intent.putExtra("name", account.displayName)
                 intent.putExtra("image_profile", account.photoUrl.toString())
                 startActivity(intent)
+                finish()
             } else {
                 Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
             }
@@ -94,6 +95,7 @@ class LoginActivity : AppCompatActivity() {
             intent.putExtra("name", currenUser.displayName)
             intent.putExtra("image_profile", currenUser.photoUrl.toString())
             startActivity(intent)
+            finish()
         }
     }
 }
