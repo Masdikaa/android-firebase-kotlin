@@ -35,100 +35,167 @@
 
     <ImageView
         android:id="@+id/icon_firebase"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/icon_firebase"
+        app:layout_constraintBottom_toBottomOf="@id/icon_bottom_guideline"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_login"/>
+        app:layout_constraintTop_toTopOf="@id/icon_top_guideline" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginHorizontal="20dp"
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Firebase CRUD"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_input_guideline_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon_bottom_guideline"
+        tools:ignore="HardcodedText" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toStartOf="@id/end_margin"
+        app:layout_constraintStart_toEndOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_input_guideline_top">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="6dp"
+            android:hint="Masukan Email"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="password_toggle"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_main_axis"
+        app:layout_constraintEnd_toStartOf="@id/end_margin"
+        app:layout_constraintStart_toEndOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="6dp"
+            android:hint="Masukan Kata Sandi"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/color_1"
+        android:text="Sign In"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/button_top_guideline"
+        app:layout_constraintEnd_toStartOf="@id/vertical_main_axis"
+        app:layout_constraintStart_toEndOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_main_axis" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/color_1"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_top_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/end_margin"
+        app:layout_constraintStart_toStartOf="@+id/vertical_main_axis"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_main_axis" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_google_login"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/button_bottom_guideline"
+        app:layout_constraintEnd_toEndOf="@id/end_margin"
+        app:layout_constraintStart_toStartOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/button_top_guideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/button_top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.555" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/button_bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.66" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/icon_top_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/icon_firebase">
+        app:layout_constraintGuide_percent="0.05" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:endIconMode="clear_text">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="6dp"
-                android:hint="Masukan Email"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/icon_bottom_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
-            app:endIconMode="password_toggle">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_main_axis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawablePadding="6dp"
-                android:hint="Masukan Kata Sandi"
-                android:inputType="textPassword" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_main_axis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_input_guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.30" />
 
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="18dp"
-            android:backgroundTint="@color/color_1"
-            android:paddingHorizontal="40dp"
-            android:text="Sign In"
-            android:textAllCaps="false"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:backgroundTint="@color/color_1"
-            android:paddingHorizontal="40dp"
-            android:text="Sign Up"
-            android:textAllCaps="false"
-            android:textSize="16sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="15dp"
-            android:text="Masuk dengan Google"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            tools:ignore="HardcodedText" />
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/btn_google_login"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
