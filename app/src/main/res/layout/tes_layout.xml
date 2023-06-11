@@ -4,17 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".activity.LoginActivity">
-
-    <FrameLayout
-        android:id="@+id/frame_ly"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="@color/white">
 
     <LinearLayout
         android:id="@+id/header_login"
@@ -29,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Masuk untuk melanjutkan"
+            android:text="Daftar Akun"
             android:textAlignment="center"
             android:textAllCaps="true"
             android:textColor="@color/white"
@@ -56,10 +46,11 @@
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Firebase CRUD"
+        android:text="Isi kolom di bawah untuk mendaftar"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/horizontal_input_guideline_top"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,14 +59,36 @@
         tools:ignore="HardcodedText" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_username_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="clear_text"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayout"
+        app:layout_constraintEnd_toStartOf="@id/end_margin"
+        app:layout_constraintStart_toEndOf="@id/start_margin"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_input_guideline_top">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="6dp"
+            android:hint="Masukan Username"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:endIconMode="clear_text"
+        app:layout_constraintBottom_toTopOf="@id/input_password_layout"
         app:layout_constraintEnd_toStartOf="@id/end_margin"
         app:layout_constraintStart_toEndOf="@id/start_margin"
-        app:layout_constraintTop_toBottomOf="@id/horizontal_input_guideline_top">
+        app:layout_constraintTop_toBottomOf="@id/input_username_layout">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/input_email"
@@ -87,11 +100,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_password_layout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:endIconMode="password_toggle"
-        app:layout_constraintBottom_toTopOf="@+id/horizontal_main_axis"
+        app:layout_constraintBottom_toTopOf="@+id/button_bottom_guideline"
         app:layout_constraintEnd_toStartOf="@id/end_margin"
         app:layout_constraintStart_toEndOf="@id/start_margin"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
@@ -112,37 +126,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/color_1"
-        android:text="Sign In"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@id/button_top_guideline"
-        app:layout_constraintEnd_toStartOf="@id/vertical_main_axis"
-        app:layout_constraintStart_toEndOf="@id/start_margin"
-        app:layout_constraintTop_toBottomOf="@id/horizontal_main_axis" />
-
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:backgroundTint="@color/color_1"
         android:text="Sign Up"
         android:textAllCaps="false"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_top_guideline"
-        app:layout_constraintEnd_toStartOf="@+id/end_margin"
-        app:layout_constraintStart_toStartOf="@+id/vertical_main_axis"
-        app:layout_constraintTop_toTopOf="@+id/horizontal_main_axis" />
-
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btn_google_login"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        app:layout_constraintBottom_toTopOf="@id/button_bottom_guideline"
         app:layout_constraintEnd_toEndOf="@id/end_margin"
         app:layout_constraintStart_toStartOf="@id/start_margin"
-        app:layout_constraintTop_toBottomOf="@id/button_top_guideline" />
+        app:layout_constraintTop_toBottomOf="@id/button_bottom_guideline" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/button_top_guideline"

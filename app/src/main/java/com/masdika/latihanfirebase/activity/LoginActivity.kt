@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.masdika.latihanfirebase.R
 import com.masdika.latihanfirebase.databinding.ActivityLoginBinding
+import com.masdika.latihanfirebase.fragment.RegisterFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -41,6 +42,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnGoogleLogin.setOnClickListener {
             signInGoogle()
+        }
+
+        binding.btnRegister.setOnClickListener {
+            supportFragmentManager.beginTransaction().replace(R.id.frame_ly, RegisterFragment())
+                .commit()
         }
 
     }
